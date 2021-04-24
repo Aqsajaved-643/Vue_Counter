@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+#counter {
+       width: 400px ;
+       height: 500px;
+       margin-top: 60px;
+       margin-left: 450px;
+       background-color: rgb(185, 153, 94);
+       
+
+    } 
+    #heading {
+        font-size: 40px;
+        margin-left: 98px;
+        margin-top: 50px;
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #digit{
+        font-size: 140px;
+        font-weight: bold;
+        margin-left: 150px;
+        margin-top: 50px;
+        color: green;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #Lcount {
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: 140px;
+        
+        position: relative;
+        top:-80px ;
+        padding: 8px 8px ;
+        color: white;
+        background-color: teal;
+        border-radius: 6px;
+    }
+    #Acount{
+        font-size: 15px;
+        font-weight: bold;
+        margin-left: 150px;
+       
+       position: relative;
+        top:-80px ;
+        border-radius: 1px;
+        padding: 8px 8px;
+        color: white;
+        background-color: teal;
+        border-radius: 6px;
+    }
+    </style>
+</head>
+<body>
+     
+    <div id="counter" style="border: 3px solid black; "  >
+
+        <h1 id="heading">COUNTER</h1>
+        <h1 id="digit">{{Digit}}</h1>
+        <button id="Lcount"v-on:click="decrease" >LOWER COUNT</button><br><br>
+        <button id="Acount" v-on:click="increase">ADD COUNT</button>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+        var counter = new Vue({
+            el: '#counter',
+            data : {
+                Digit: '6'
+            },
+            methods: {
+                increase(){
+                    this.Digit++
+                },
+                decrease(){
+                    this.Digit--
+                }
+            }
+        })
+    </script>
+</body>
+</html>
